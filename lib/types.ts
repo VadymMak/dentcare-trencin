@@ -59,3 +59,23 @@ export interface WhyUsItem {
   title: string;
   description: string;
 }
+
+export interface ChatMessage {
+  id: string;
+  text: string;
+  sender: 'bot' | 'user';
+  timestamp: Date;
+}
+
+export interface QuickReply {
+  id: string;
+  label: string;
+  response: string;
+}
+
+export interface ChatConfig {
+  greeting: string;
+  quickReplies: QuickReply[];
+  fallbackResponse: string;
+  whatsappNumber: string;
+}

@@ -9,6 +9,8 @@ import BookingSection from '@/components/sections/BookingSection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
+import WhatsAppButton from '@/components/widgets/WhatsAppButton';
+import ChatWidget from '@/components/widgets/ChatWidget';
 
 export default function Home() {
   return (
@@ -24,6 +26,8 @@ export default function Home() {
       <ReviewsSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
+      <ChatWidget />
     </>
   );
 }

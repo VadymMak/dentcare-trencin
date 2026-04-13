@@ -6,6 +6,7 @@ import type {
   ContactInfo,
   TrustItem,
   WhyUsItem,
+  ChatConfig,
 } from './types';
 
 export const TRUST_ITEMS: TrustItem[] = [
@@ -190,4 +191,31 @@ export const CONTACT_INFO: ContactInfo = {
     saturday: 'So: 9:00 – 13:00',
     sunday: 'Ne: Zatvorené',
   },
+};
+
+export const CHAT_CONFIG: ChatConfig = {
+  greeting: 'Dobrý deň! Som asistent kliniky DentCare. Ako vám môžem pomôcť?',
+  fallbackResponse:
+    'Ďakujem za správu. Náš tím vám odpovie čo najskôr. Ak je to urgentné, zavolajte na +421 32 123 4567.',
+  whatsappNumber: '421321234567',
+  quickReplies: [
+    {
+      id: 'pricing',
+      label: '💰 Cenník služieb',
+      response:
+        'Naše orientačné ceny:\n• Preventívna prehliadka — 45 €\n• Profesionálne čistenie — 79 €\n• Bielenie zubov — od 290 €\n• Porcelánová faseta — od 350 €\n• Implantát (Swiss Made) — od 890 €\n\nPresná cena po konzultácii a RTG diagnostike.',
+    },
+    {
+      id: 'booking',
+      label: '📅 Objednať sa',
+      response:
+        'Objednajte sa jednoducho:\n📞 +421 32 123 4567\n✉️ info@dentcare-trencin.sk\n\nAlebo vyplňte online formulár nižšie ↓',
+    },
+    {
+      id: 'hours',
+      label: '🕐 Pracovná doba',
+      response:
+        'Otváracie hodiny:\n• Pondelok – Piatok: 8:00 – 18:00\n• Sobota: 9:00 – 13:00\n• Nedeľa: Zatvorené\n\nUrgentné prípady riešime do 24 hodín.',
+    },
+  ],
 };
