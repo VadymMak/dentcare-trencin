@@ -91,12 +91,16 @@ export default function TeamSection() {
                 (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--shadow)';
               }}
             >
-              <div style={{ position: 'relative', height: '240px' }}>
+              <div
+                className="team-card-image"
+                style={{ position: 'relative', aspectRatio: '4/5', overflow: 'hidden' }}
+              >
                 <Image
                   src={member.imageUrl}
                   alt={member.name}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
                 />
               </div>
               <div style={{ padding: '24px' }}>

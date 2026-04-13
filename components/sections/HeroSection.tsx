@@ -20,6 +20,7 @@ export default function HeroSection() {
           src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop"
           alt="Modern dental clinic"
           fill
+          sizes="100vw"
           style={{ objectFit: 'cover', opacity: 0.25 }}
           priority
         />

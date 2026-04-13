@@ -93,28 +93,28 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'MUDr. Jana Kováčová',
     role: 'Implantológia & Chirurgia',
     description: '12 rokov skúseností, absolventka Viedenskej stomatologickej kliniky.',
-    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&crop=top',
   },
   {
     id: '2',
     name: 'MUDr. Tomáš Novák',
     role: 'Estetická stomatológia',
     description: 'Špecialista na Invisalign a porcelánové fasety, člen ESE.',
-    imageUrl: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=top',
   },
   {
     id: '3',
     name: 'MUDr. Petra Horáčková',
     role: 'Detská stomatológia',
     description: 'Špecialistka na liečbu detí a dospievajúcich, ortodoncia.',
-    imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop&crop=top',
   },
   {
     id: '4',
     name: 'MUDr. Martin Blaho',
     role: 'Parodontológia',
     description: 'Odborník na liečbu ďasien a pokročilú implantológiu.',
-    imageUrl: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=500&fit=crop&crop=top',
   },
 ];
 

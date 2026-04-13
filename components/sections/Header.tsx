@@ -1,16 +1,36 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CONTACT_INFO } from '@/lib/constants';
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const prevScrollY = useRef(0);
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (rafId.current !== null) return;
+      rafId.current = requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const goingDown = currentY > prevScrollY.current;
+        // Only hide after scrolling past 60px so header doesn't flicker at top
+        if (currentY < 60) {
+          setVisible(true);
+        } else {
+          setVisible(!goingDown);
+        }
+        prevScrollY.current = currentY;
+        rafId.current = null;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId.current !== null) cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   const navLinks = [
@@ -29,10 +49,12 @@ export default function Header() {
         left: 0,
         right: 0,
         zIndex: 100,
-        background: 'var(--white-overlay-strong)',
-        backdropFilter: 'blur(12px)',
-        boxShadow: scrolled ? 'var(--shadow)' : 'none',
-        transition: 'var(--transition)',
+        background: 'var(--header-bg)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: 'var(--header-shadow)',
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease',
         padding: '0 24px',
       }}
     >
@@ -54,13 +76,13 @@ export default function Header() {
               style={{
                 fontWeight: 700,
                 fontSize: '1.125rem',
-                color: 'var(--blue)',
+                color: 'var(--blue-light)',
                 lineHeight: 1.1,
               }}
             >
               DentCare
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--gray-500)', letterSpacing: '0.05em' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--gray-400)', letterSpacing: '0.05em' }}>
               TRENČÍN
             </div>
           </div>
@@ -80,13 +102,13 @@ export default function Header() {
               key={link.href}
               href={link.href}
               style={{
-                color: 'var(--gray-700)',
+                color: 'var(--gray-300)',
                 fontWeight: 500,
                 fontSize: '0.9375rem',
                 transition: 'var(--transition)',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--blue)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-700)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--white)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-300)')}
             >
               {link.label}
             </a>
@@ -131,7 +153,7 @@ export default function Header() {
                 display: 'block',
                 width: '24px',
                 height: '2px',
-                background: 'var(--gray-800)',
+                background: 'var(--gray-300)',
                 transition: 'var(--transition)',
               }}
             />
@@ -143,8 +165,8 @@ export default function Header() {
       {menuOpen && (
         <div
           style={{
-            background: 'var(--white)',
-            borderTop: '1px solid var(--gray-200)',
+            background: 'var(--header-bg)',
+            borderTop: '1px solid var(--white-overlay-faint)',
             padding: '16px 24px 24px',
           }}
         >
@@ -156,9 +178,9 @@ export default function Header() {
               style={{
                 display: 'block',
                 padding: '12px 0',
-                color: 'var(--gray-700)',
+                color: 'var(--gray-300)',
                 fontWeight: 500,
-                borderBottom: '1px solid var(--gray-100)',
+                borderBottom: '1px solid var(--white-overlay-faint)',
               }}
             >
               {link.label}
@@ -183,7 +205,7 @@ export default function Header() {
           <div
             style={{
               marginTop: '16px',
-              color: 'var(--gray-600)',
+              color: 'var(--gray-400)',
               fontSize: '0.875rem',
               textAlign: 'center',
             }}
