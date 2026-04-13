@@ -1,3 +1,5 @@
+'use client';
+
 import { CONTACT_INFO } from '@/lib/constants';
 
 export default function Footer() {
@@ -164,7 +166,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.08)',
+            borderTop: '1px solid var(--white-overlay-faint)',
             paddingTop: '24px',
             display: 'flex',
             justifyContent: 'space-between',

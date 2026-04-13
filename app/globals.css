@@ -1,19 +1,36 @@
 :root {
   --blue: #2563EB;
   --blue-dark: #1D4ED8;
+  --blue-light: #60A5FA;
+  --blue-alpha: rgba(37, 99, 235, 0.2);
+  --blue-alpha-border: rgba(37, 99, 235, 0.4);
   --teal: #0D9488;
   --teal-dark: #0F766E;
   --navy: #0F172A;
   --bg: #F8FBFF;
   --bg-alt: #EFF6FF;
   --white: #FFFFFF;
+  --white-overlay: rgba(255, 255, 255, 0.1);
+  --white-overlay-hover: rgba(255, 255, 255, 0.15);
+  --white-overlay-border: rgba(255, 255, 255, 0.2);
+  --white-overlay-strong: rgba(255, 255, 255, 0.97);
+  --white-overlay-faint: rgba(255, 255, 255, 0.08);
+  --white-overlay-dim: rgba(255, 255, 255, 0.3);
+  --white-overlay-mid: rgba(255, 255, 255, 0.5);
+  --navy-overlay: rgba(15, 23, 42, 0.05);
+  --navy-card: rgba(255, 255, 255, 0.05);
+  --navy-card-border: rgba(255, 255, 255, 0.08);
+  --teal-alpha: rgba(13, 148, 136, 0.15);
+  --teal-alpha-border: rgba(13, 148, 136, 0.4);
   --gray-100: #F1F5F9;
   --gray-200: #E2E8F0;
   --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
   --gray-500: #64748B;
   --gray-600: #475569;
   --gray-700: #334155;
   --gray-800: #1E293B;
+  --gold: #F59E0B;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
   --radius: 16px;
@@ -97,5 +114,30 @@ img {
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Header: show burger, hide desktop nav */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .burger-btn {
+    display: flex !important;
+  }
+
+  /* WhyUs: stack columns */
+  .why-us-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Contact: stack columns */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
 }

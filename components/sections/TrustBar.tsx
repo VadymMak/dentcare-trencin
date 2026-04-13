@@ -3,6 +3,7 @@ import { TRUST_ITEMS } from '@/lib/constants';
 export default function TrustBar() {
   return (
     <section
+      id="trust"
       style={{
         background: 'var(--navy)',
         padding: '28px 24px',

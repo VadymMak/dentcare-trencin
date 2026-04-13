@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 export default function HeroSection() {
@@ -40,15 +42,15 @@ export default function HeroSection() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              background: 'rgba(37,99,235,0.2)',
-              border: '1px solid rgba(37,99,235,0.4)',
+              background: 'var(--blue-alpha)',
+              border: '1px solid var(--blue-alpha-border)',
               borderRadius: '100px',
               padding: '6px 16px',
               marginBottom: '24px',
               animation: 'fadeIn 0.6s ease',
             }}
           >
-            <span style={{ color: '#60A5FA', fontSize: '0.875rem', fontWeight: 500 }}>
+            <span style={{ color: 'var(--blue-light)', fontSize: '0.875rem', fontWeight: 500 }}>
               ⭐ Hodnotenie 4.9 — najlepšia klinika v Trenčíne
             </span>
           </div>
@@ -65,7 +67,7 @@ export default function HeroSection() {
           >
             Váš dokonalý úsmev
             <br />
-            <span style={{ color: '#60A5FA' }}>začína tu</span>
+            <span style={{ color: 'var(--blue-light)' }}>začína tu</span>
           </h1>
 
           <p
@@ -111,17 +113,17 @@ export default function HeroSection() {
             <a
               href="tel:+421321234567"
               style={{
-                background: 'rgba(255,255,255,0.1)',
+                background: 'var(--white-overlay)',
                 color: 'var(--white)',
                 padding: '16px 32px',
                 borderRadius: 'var(--radius-sm)',
                 fontWeight: 600,
                 fontSize: '1rem',
-                border: '1px solid rgba(255,255,255,0.2)',
+                border: '1px solid var(--white-overlay-border)',
                 transition: 'var(--transition)',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.15)')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--white-overlay-hover)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--white-overlay)')}
             >
               📞 +421 32 123 4567
             </a>
@@ -175,7 +177,7 @@ export default function HeroSection() {
           style={{
             width: '24px',
             height: '40px',
-            border: '2px solid rgba(255,255,255,0.3)',
+            border: '2px solid var(--white-overlay-dim)',
             borderRadius: '12px',
             display: 'flex',
             justifyContent: 'center',
@@ -186,7 +188,7 @@ export default function HeroSection() {
             style={{
               width: '4px',
               height: '8px',
-              background: 'rgba(255,255,255,0.5)',
+              background: 'var(--white-overlay-mid)',
               borderRadius: '2px',
             }}
           />

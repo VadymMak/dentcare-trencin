@@ -29,7 +29,7 @@ export default function Header() {
         left: 0,
         right: 0,
         zIndex: 100,
-        background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
+        background: scrolled ? 'var(--white-overlay-strong)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         boxShadow: scrolled ? 'var(--shadow)' : 'none',
         transition: 'var(--transition)',

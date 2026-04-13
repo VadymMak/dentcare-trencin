@@ -71,7 +71,7 @@ export default function BookingSection() {
           <span
             style={{
               display: 'inline-block',
-              background: 'rgba(37,99,235,0.2)',
+              background: 'var(--blue-alpha)',
               color: '#60A5FA',
               padding: '6px 16px',
               borderRadius: '100px',
@@ -101,8 +101,8 @@ export default function BookingSection() {
           <div
             className="reveal visible"
             style={{
-              background: 'rgba(13,148,136,0.15)',
-              border: '1px solid rgba(13,148,136,0.4)',
+              background: 'var(--teal-alpha)',
+              border: '1px solid var(--teal-alpha-border)',
               borderRadius: 'var(--radius)',
               padding: '48px',
               textAlign: 'center',
@@ -120,10 +120,10 @@ export default function BookingSection() {
           <form className="reveal" onSubmit={handleSubmit}>
             <div
               style={{
-                background: 'rgba(255,255,255,0.05)',
+                background: 'var(--navy-card)',
                 borderRadius: 'var(--radius)',
                 padding: '40px',
-                border: '1px solid rgba(255,255,255,0.08)',
+                border: '1px solid var(--navy-card-border)',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '20px',
